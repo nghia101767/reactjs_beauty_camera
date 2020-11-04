@@ -1,9 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 a {
@@ -13,4 +14,327 @@ a {
 
 * {
   box-sizing: border-box;
+  text-transform: uppercase;
+}
+.loader,
+.loader:before,
+.loader:after {
+  background: #ffffff;
+  -webkit-animation: load1 1s infinite ease-in-out;
+  animation: load1 1s infinite ease-in-out;
+  width: 1em;
+  height: 4em;
+}
+.loader-box {
+  position: fixed;
+  z-index: 9999999;
+  background-color: #525252;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #fff;
+}
+.loader {
+  color: #ffffff;
+  text-indent: -9999em;
+  margin: 88px auto;
+  position: relative;
+  font-size: 11px;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+  position: absolute;
+  top: 0;
+  content: "";
+}
+.loader:before {
+  left: -1.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.loader:after {
+  left: 1.5em;
+}
+@-webkit-keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em;
+  }
+}
+@keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em;
+  }
+}
+
+.capture-thumb {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  width: 76px;
+  height: 76px;
+  z-index: 102;
+  border-radius: 50%;
+}
+
+.capture-preview-close {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  width: 76px;
+  height: 76px;
+  z-index: 102;
+  border-radius: 50%;
+}
+/* video {
+  z-index: 100;
+  background-color: transparent;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  object-fit: cover;
+  height: 100vh;
+  width: 100vw;
+  filter: grayscale();
+} */
+.konva-main {
+  position: fixed;
+  z-index: 101;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.capture-preview {
+  position: fixed;
+  z-index: 102;
+  top: 0;
+  left: 0;
+}
+
+.icon-toolbar {
+  position: fixed;
+  z-index: 102;
+  width: 48px;
+  height: 48px;
+  background-color: rgba(10, 9, 9, 0.2);
+  border: 0;
+  border-radius: 50%;
+  padding: 8px;
+}
+.icon-toolbar img {
+  width: 100%;
+  height: 100%;
+}
+.icon-bottom {
+  bottom: 38px;
+}
+.icon-top {
+  top: 16px;
+}
+.icon-square {
+  border-radius: 2px;
+}
+.icon-clam {
+  /*center - r - d - padding*/
+  left: calc(50% - 28px - 64px);
+}
+.icon-filter {
+  /*center + r + d + padding*/
+  left: calc(50% + 28px + 18px);
+  padding: 14px 8px;
+}
+.icon-text {
+  /*center + r + d + padding*/
+  left: calc(50% + 28px + 56px + 18px);
+  padding: 14px;
+}
+.icon-my-page {
+  left: 12px;
+}
+.icon-hatena {
+  right: 12px;
+}
+.icon-change {
+  right: calc(12px + 56px + 12px);
+}
+.icon-img {
+  right: calc(12px + 56px + 12px + 56px + 12px);
+}
+.preview-scene {
+  position: fixed;
+  left: 10px;
+  right: 10px;
+  top: 10px;
+  bottom: 10px;
+  z-index: 200;
+  background-color: white;
+}
+.preview-scene .preview-save {
+  margin: 20px 20px 0 20px;
+  border: 2px solid rgba(0, 0, 0, 1);
+  font-size: 16px;
+  padding: 5px 40px;
+}
+.preview-scene .preview-close {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  border-bottom: 0;
+  background-color: transparent;
+  width: 60px;
+  user-select: none;
+  outline: none;
+}
+.preview-scene .preview-close img {
+  width: 100%;
+}
+.preview-scene .preview-close .close-menu {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: red;
+  z-index: 210;
+}
+.preview-scene .preview-img {
+  margin: 30px 50px 0 50px;
+  width: calc(100% - 100px);
+  height: 60%;
+  object-fit: contain;
+}
+.margin {
+  margin: 8px;
+}
+.padding {
+  padding: 8px;
+}
+.text-center {
+  text-align: center;
+}
+.icon-share {
+  border-radius: 4px;
+  border: 4px solid #000000;
+  width: 76px;
+  height: 76px;
+}
+.icon-tw {
+  background-color: rgb(0, 153, 255);
+}
+
+.icon-insta {
+  background-color: rgb(255, 0, 98);
+}
+/* box clam */
+.box-clam {
+  position: fixed;
+  top: 100vh;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 103;
+  background-color: rgba(0, 0, 0, 0.5);
+  flex-direction: column;
+  transition: all 0.2s;
+  opacity: 0;
+}
+.box-clam.active {
+  top: 0;
+  opacity: 1;
+}
+.box-clam .close {
+  height: calc(100% - 354px);
+}
+.box-clam .container {
+  height: 354px;
+}
+.box-clam .container .menu {
+  height: 50px;
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+}
+
+.box-clam .container .menu .btn-clear-clam {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+}
+
+.box-clam .container .content {
+  height: calc(354px - 50px);
+  min-width: 100vw;
+  display: flex;
+  flex-flow: row wrap;
+  vertical-align: top;
+  flex-direction: row;
+  background-color: rgba(0, 0, 0, 0.55);
+}
+.box-clam .container .content .thumb {
+  width: 85px;
+  height: 120px;
+  background-color: transparent;
+  border: 0;
+  padding: 8px;
+  margin: 8px;
+}
+.box-clam .container .content .thumb img {
+  width: 100%;
+  height: 100%;
+}
+.btn-tab-item {
+  display: inline-block;
+  color: white;
+  background-color: transparent;
+  border: 0;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  outline: none;
+  user-select: none;
+}
+
+.btn-tab-item.active {
+  background: rgb(255, 0, 98, 0.8);
+}
+.react-html5-camera-photo > #container-circles {
+  bottom: 100px;
+  z-index: 102;
+}
+
+.react-html5-camera-photo > #container-circles > #outer-circle {
+  border: 4px solid #fff;
+}
+.react-html5-camera-photo > #container-circles > #outer-circle > #inner-circle {
+  display: none;
 }
